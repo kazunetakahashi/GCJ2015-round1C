@@ -18,16 +18,9 @@ void output() {
   cerr << R << " " << C << " " << W << endl;
   int ans = (R-1) * (C/W);
   int h = C/W;
-  int tans;
-  int A=0, B=0;
-  if (h > 1) {
-    A = 0;
-    A += h-2;
-    A += W+1;
-  }
-  B += h-1;
-  B += C - (h-1)*W;
-  tans = max(A, B);
+  int tans = 0;
+  tans += h-1;
+  tans += ((C%W == 0) ? W : W+1);
   cout << ans + tans << endl;
 }
 
